@@ -1,0 +1,20 @@
+name: Rubocop
+
+on: [push]
+
+jobs:
+  rubocop:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          ruby-version: 2.7.3
+                  
+      - name: Analyze code
+        run: bundle exec rubocop
