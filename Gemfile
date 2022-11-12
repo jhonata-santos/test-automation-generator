@@ -1,0 +1,12 @@
+source 'http://rubygems.org'
+
+gem 'colorize'
+gem 'excon'
+gem 'i18n'
+gem 'json'
+gem 'lucky_case'
+gem 'pry'
+gem 'rake'
+gem 'rubocop'
+gem 'rubocop-checkstyle_formatter'
+gem 'yaml'
