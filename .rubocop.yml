@@ -3,6 +3,7 @@ AllCops:
 
   Exclude:
   - 'core/model/ui.rb'
+  - 'vendor/'
 
 Style/FrozenStringLiteralComment:
   Enabled: false
