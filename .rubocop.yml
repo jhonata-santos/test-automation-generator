@@ -4,7 +4,7 @@ AllCops:
 
   Exclude:
   - 'core/model/ui.rb'
-  - 'vendor/'
+  - vendor/bundle/**/*
 
 Style/FrozenStringLiteralComment:
   Enabled: false
