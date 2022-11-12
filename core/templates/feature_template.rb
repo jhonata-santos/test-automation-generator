@@ -1,7 +1,8 @@
 class FeatureTemplate
   include FileCommons
 
-  attr_accessor :bu_name, :tribe_name, :tag_squad_name, :tag_api_name, :title_squad_name, :title_api_name, :swagger_url, :content, :scenarios, :section
+  attr_accessor :bu_name, :tribe_name, :tag_squad_name, :tag_api_name, :title_squad_name,
+                :title_api_name, :swagger_url, :content, :scenarios, :section
 
   def initialize(data_squad, data_api, data_scenarios)
     @content = ''
@@ -25,7 +26,7 @@ class FeatureTemplate
     @scenarios.each do |scenario|
       @content << build_feature_header if @section.nil?
 
-      if section.nil? || !@section.eql?(scenario.swagger_section) 
+      if section.nil? || !@section.eql?(scenario.swagger_section)
         @section = scenario.swagger_section
 
         scenario_template = ScenarioTemplate.new(scenario)

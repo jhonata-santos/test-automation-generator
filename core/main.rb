@@ -1,18 +1,16 @@
-require_relative 'support/env.rb'
+require_relative 'support/env'
 
+# Class responsible for the main orchestration
 class AutomationGenerator
   include RequestCommons
   include ExtractData
 
-  attr_accessor :doc
-  attr_accessor :data_squad
-  attr_accessor :data_api
-  attr_accessor :data_scenarios
+  attr_accessor :doc, :data_squad, :data_api, :data_scenarios
 
   def initialize(url)
     @doc = get_doc_api(url)
-  
-    @data_squad = Squad.new(extract_data_squad())
+
+    @data_squad = Squad.new(extract_data_squad)
     @data_api = Feature.new(extract_data_for_feature(@doc))
 
     @data_scenarios = []
@@ -30,6 +28,9 @@ end
 
 Ui.new
 
-# urls = ['https://fakerestapi.azurewebsites.net/swagger/v1/swagger.json', 'https://api.portaldatransparencia.gov.br/v2/api-docs', 'https://petstore.swagger.io/v2/swagger.json']
+#  urls = ['https://fakerestapi.azurewebsites.net/swagger/v1/swagger.json',
+#           'https://api.portaldatransparencia.gov.br/v2/api-docs',
+#           'https://petstore.swagger.io/v2/swagger.json'
+#         ]
 urls = ['https://fakerestapi.azurewebsites.net/swagger/v1/swagger.json']
 urls.each { |url| AutomationGenerator.new(url).main }

@@ -1,17 +1,13 @@
 class ContractStepsTemplate
   include FileCommons
 
-  def initialize()
-
-  end
-
   def set_step_file_name(step)
     section = I18n.transliterate(step)
     "#{section}_steps.rb"
   end
 
   def set_path_out
-    path = I18n.transliterate()
+    path = I18n.transliterate
     file_path = File.absolute_path("./output/steps/#{path}/")
     FileUtils.mkdir_p(file_path) unless Dir.exist?(file_path)
     file_path
@@ -24,7 +20,7 @@ class ContractStepsTemplate
 
     # TODO: popular os devidos parametros
     if type.eql?('positivo')
-    
+
     else
 
     end

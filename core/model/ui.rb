@@ -1,3 +1,4 @@
+# Class responsible for the console interface
 class Ui
   def initialize
     ui_show_introduction
@@ -5,7 +6,7 @@ class Ui
   end
 
   def ui_show_introduction
-    print %( 
+    print %(
     ===============================================================
            _         _                        _   _             
           / \\  _   _| |_ ___  _ __ ___   __ _| |_(_) ___  _ __  
